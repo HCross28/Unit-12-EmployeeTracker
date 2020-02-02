@@ -39,6 +39,8 @@ var connection = mysql.createConnection({
       });
   }
 
+  //Setting up display options for the 3 tables. Unfortunately I've been having issues displaying all 3
+  // tables as one table. In the effort of having SOMETHING for the deadline the 3 tables have remained separate.
   function display(){
       inquirer
         .prompt({
@@ -72,7 +74,7 @@ var connection = mysql.createConnection({
         });
   };
 
-  
+  //Beginning to set up the directory for editing options
   function edit(){
       inquirer  
         .prompt({
@@ -94,4 +96,12 @@ var connection = mysql.createConnection({
             }
 
         });
-  }
+  };
+
+  //The 3 editing functions seen above would have been defined below. Due to difficulties in figuring
+  // out how to edit info and the deadline drawing too near, the road ends here for now. 
+
+  function editEmployees(){
+    connection.query(
+        "UPDATE employee SET ?? WHERE ??")
+  };
